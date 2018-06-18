@@ -3,23 +3,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-{% block styles %}
-{{super()}}
-<link rel="stylesheet"
+  <meta charset="utf-8">
+  <title>FIC</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  {% block styles %}
+  {{super()}}
+  <link rel="stylesheet"
       href="{{url_for('.static', filename='css/bootstrap.css')}}">
-{% endblock %}
+  {% endblock %}
 
 
-{% block scripts %}
-<script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
-<script src="{{url_for('.static', filename='js/popper.min.js')}}"></script>
-<script src="{{url_for('.static', filename='js/bootstrap.js')}}"></script>
-<script src="{{url_for('.static', filename='js/holder.min.js')}}"></script>
-{% endblock %}
+  {% block scripts %}
+  <script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
+  <script src="{{url_for('.static', filename='js/popper.min.js')}}"></script>
+  <script src="{{url_for('.static', filename='js/bootstrap.js')}}"></script>
+  <script src="{{url_for('.static', filename='js/holder.min.js')}}"></script>
+  {% endblock %}
 
 </head>
   {% block navbar %}
+
+
   <header>
     <!-- header-area start -->
     <div id="sticker" class="header-area">
