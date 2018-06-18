@@ -46,27 +46,19 @@
         </p>
       </main>
 
-      <footer class="mastfoot mt-auto">
+
+
+  {% block content %}{% endblock %}
+
+
+        <footer class="mastfoot mt-auto">
         <div class="inner">
           <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
         </div>
       </footer>
     </div>
-
-            
-
-
-            <!-- END: Navigation -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- header-area end -->
-  </header>
-  <!-- header end -->
+  
   {% endblock %}
-
-  {% block content %}{% endblock %}
 </body>
   </html>
   {% endblock %}
