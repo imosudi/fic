@@ -1,10 +1,24 @@
 {% extends "bootstrap/base.html" %}
+{% block doc %}
+<!DOCTYPE html>
+<html>
+<head>
+
 {% block styles %}
 {{super()}}
 <link rel="stylesheet"
       href="{{url_for('.static', filename='css/bootstrap.css')}}">
 {% endblock %}
 
+
+{% block scripts %}
+<script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
+<script src="{{url_for('.static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('.static', filename='js/bootstrap.js')}}"></script>
+<script src="{{url_for('.static', filename='js/holder.min.js')}}"></script>
+{% endblock %}
+
+</head>
   {% block navbar %}
   <header>
     <!-- header-area start -->
@@ -14,50 +28,41 @@
           <div class="col-md-12 col-sm-12">
 
             <!-- Navigation -->
-            <nav class="navbar navbar-default">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-                <!-- Brand -->
-                <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                  <h1><span>e</span>Business</h1>
-                  <!-- Uncomment below if you prefer to use an image logo -->
-                  <!-- <img src="img/logo.png" alt="" title=""> -->
-								</a>
-              </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="active">
-                    <a class="page-scroll" href="#home">Home</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#about">About</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#services">Services</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#team">Team</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#portfolio">Portfolio</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#blog">Blog</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- navbar-collapse -->
-            </nav>
+
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Expand at md</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
+      </div>
+    </nav>
+            
+
+
             <!-- END: Navigation -->
           </div>
         </div>
@@ -69,3 +74,6 @@
   {% endblock %}
 
   {% block content %}{% endblock %}
+
+  </html>
+  {% endblock %}
