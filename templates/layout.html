@@ -1,76 +1,135 @@
-<!--{#% extends "bootstrap/base.html" %#}-->
 {% block doc %}
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>FIC</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Financial Inclussion Services</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+  		<meta content="" name="keywords">
+  		<meta content="" name="description">
+		
+		<!-- google fonts -->
 
-  {% block styles %}
-  <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.css')}}">
-  <link rel="stylesheet" href="{{url_for('.static', filename='css/cover.css')}}">
-  <!--link rel="stylesheet" href="{{url_for('.static', filename='css/navbar.css')}}"-->
-  <link rel="stylesheet" href="{{url_for('.static', filename='css/carousel.css')}}">
-  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"-->
-  {% endblock %}
-
-
-  {% block scripts %}
-  <script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
-  <script src="{{url_for('.static', filename='js/popper.min.js')}}"></script>
-  <script src="{{url_for('.static', filename='js/bootstrap.js')}}"></script>
-  <!--script src="{{url_for('.static', filename='js/holder.min.js')}}"></script-->
-  {% endblock %}
-
-</head>
-
-<body class="text-center" style="background-color: #050;"> <!-- open body -->
- <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">Financial Inclussion CenterC</h3>
-          
-          {% block navbar %}
-            <nav class="nav nav-masthead justify-content-center navbar-expand-md">
-              <!--a class="navbar-brand" href="#">Expand at md</a-->
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarsExample04">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                      <a class="nav-link active" href="#">Home  <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Contact</a>
-                  </li>
-                </ul>
-              </div> 
-            </nav>
-          {% endblock %}
-
-        </div>
-      </header>
-    
-      {% block content %}{% endblock %}
+		<!-- Css link -->
+	 {% block styles %}
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/owl.carousel.css')}}>"
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/owl.transitions.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/animate.min.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/lightbox.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.min.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/preloader.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/image.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/icon.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/responsive.css')}}">
+		<style>
+		       /* Set the size of the div element that contains the map */
+		      #mapmio {
+		        height: 400px;  /* The height is 400 pixels */
+		        width: 100%;  /* The width is the width of the web page */
+		       }
+		</style>
+    {% endblock %}
 
 
-      {% block footer %}
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Designed for <a href="https://getbootstrap.com/">FIC</a> by <a href="https://twitter.com/imosudi">@imosudi</a></p>
-        </div>
-      </footer>
-      {% endblock %}
-    
-</div>  
-</body> <!--Close body-->
-  </html>
-  {% endblock %}
+    	<!-- load Js -->
+	{% block scripts %}
+		<script src="{{url_for('.static', filename='js/jquery-1.11.3.min.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/bootstrap.min.js')}}"></script>
+		<script async defer 
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcU6gRJebrpJTPa8fCyqOvwQSCL7-3weY&callback=initMap"></script>
+		<script src="{{url_for('.static', filename='js/waypoints.min.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/lightbox.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/jquery.counterup.min.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/owl.carousel.min.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/html5lightbox.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/jquery.mixitup.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/wow.min.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/jquery.scrollUp.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/jquery.sticky.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/jquery.nav.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/main.js')}}"></script>
+	
+		<script>
+		// Initialize and add the map
+		function initMap() {
+						  // The location of Uluru
+						  var fic = {lat: 6.556344, lng: 3.3695767}; //,
+						  // The map, centered at Uluru
+						  var map = new google.maps.Map(
+						      document.getElementById('mapmio'), {zoom: 15, center: fic});
+						  // The marker, positioned at Uluru
+						  var marker = new google.maps.Marker({position: fic, map: map});
+							}
+		</script>
+
+	{% endblock %}
+
+	</head>
+	<body id="top">
+	
+
+        <header id="navigation" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+					<h1 class="navbar-brand">
+						<a href="#body"><img src="img/logo.png" height="50" width="54" alt=""></a>
+					</h1>
+					<!-- /logo -->
+                </div>
+                {% block navbar %}
+				<!-- main nav -->
+	                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+	                    <ul id="nav" class="nav navbar-nav menu">
+	                        <li><a href="#top">Home</a></li>
+	                        <li><a href="#features">Service</a></li>
+	                        <!--li><a href="#portfolio">Portfolio</a></li>
+	                        <li><a href="#team">Team</a></li>
+	                        <li><a href="#pricing-table">Price</a></li>
+	                        <li><a href="#blog">Blog</a></li>
+	                        <li><a href="#testimonial">Testimonial</a></li-->
+	                        <li><a href="#contact-form">Contact</a></li>
+	                    </ul>
+	                </nav>
+				<!-- /main nav -->
+				{% endblock %}
+				
+            </div>
+        </header>
+    <div class="wrapper">
+
+    {% block content %}{% endblock %}
+
+	
+    {% block footer %}
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="block">
+							<a href="#"><img src="img/logo.png" alt=""></a>
+							<p>© 2018 All rights reserved <a href="https://one.net.ng/" target="_blank">One Network</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	{% end %}
+	</div>
+
+	
+	</body>
+</html>
+{% endblock %}
