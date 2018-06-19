@@ -1,6 +1,30 @@
 {% extends "layout.html" %}
 
 	{% block content %}
+		<section id="contact-form">
+			<div class="container">
+				<div class="row">
+					<div class="title">
+						<h2>CONTACT US</h2>
+					</div>
+					<div class="col-md-8 col">
+						<!-- map -->
+						<div class="map">
+	                      <!--div id="googleMap"></div-->
+	                      <div id="mapmio" ></div>
+	                      <!-- http://*.fic.com.ng/*, http://*.cosmos.com.ng/*, http://*.one.net.ng/*-->
+	                   </div><!--/map-->
 
-
+					</div>
+					<div class="col-md-4">
+						<form>
+                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" class="form-control" placeholder="Email">
+                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                            <button class="btn btn-default" type="submit">SEND</button>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</section>
 	{% endblock %}
