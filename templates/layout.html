@@ -39,7 +39,8 @@
 		<script src="{{url_for('.static', filename='js/jquery-1.11.3.min.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/bootstrap.min.js')}}"></script>
 		<script async defer 
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcU6gRJebrpJTPa8fCyqOvwQSCL7-3weY&callback=initMap"></script>
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcU6gRJebrpJTPa8fCyqOvwQSCL7-3weY&callback=initMap">
+		</script>
 		<script src="{{url_for('.static', filename='js/waypoints.min.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/lightbox.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/jquery.counterup.min.js')}}"></script>
@@ -51,7 +52,6 @@
 		<script src="{{url_for('.static', filename='js/jquery.sticky.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/jquery.nav.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/main.js')}}"></script>
-	
 		<script>
 		// Initialize and add the map
 		function initMap() {
@@ -64,15 +64,12 @@
 						  var marker = new google.maps.Marker({position: fic, map: map});
 							}
 		</script>
-
 	{% endblock %}
 
 	</head>
 	<body id="top">
-	
-
-        <header id="navigation" class="navbar-fixed-top animated-header">
-            <div class="container">
+	    <header id="navigation" class="navbar-fixed-top animated-header">
+            <!--div class="container"-->
                 <div class="navbar-header">
                     <!-- responsive nav button -->
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -106,7 +103,7 @@
 				<!-- /main nav -->
 				{% endblock %}
 				
-            </div>
+            <!--/div-->
         </header>
     <div class="wrapper">
 
@@ -115,7 +112,7 @@
 	
     {% block footer %}
 		<footer>
-			<div class="container">
+			<!--div class="container"-->
 				<div class="row">
 					<div class="col-md-12">
 						<div class="block">
@@ -124,7 +121,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			<!--/div-->
 		</footer>
 	{% endblock %}
 	</div>
