@@ -36,7 +36,8 @@
 
     	<!-- load Js -->
 	{% block scripts %}
-		<script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
+		<!--script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script-->
+		<script src="{{url_for('.static', filename='js/jquery-1.11.3.min.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/bootstrap4.js')}}"></script>
 		<script async defer 
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcU6gRJebrpJTPa8fCyqOvwQSCL7-3weY&callback=initMap">
@@ -141,7 +142,9 @@
 			  map.setCenter(options.position);
 			}
 
-			google.maps.event.addDomListener(window, 'load', initialize);
+			google.maps.event.addDomListener(window, 'load', function () {
+			 initialize(Latitude, Longitude);
+			});
 
     </script>
 	{% endblock %}
