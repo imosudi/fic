@@ -116,23 +116,29 @@
       					<input type="text" class="form-control" id="validationCustom01" placeholder="Business name" required>
       					<div class="valid-feedback"> Looks good! </div>
     				</div>
-    				<div class="col-md-12 mb-3">
+    				<div class="col-md-4 mb-3">
 				    	<!--label for="validationCustom02">Last name</label-->
-				      	<input type="text" class="form-control" id="validationCustom02" placeholder="Business description" required>
+				      	<input type="text" class="form-control" id="validationCustom02" placeholder="Business Registration Number (RC Number)" required>
 				      	<div class="valid-feedback"> Looks good!  </div>
 				    </div>
 				    <div class="col-md-4 mb-3">
 				    	<!--label for="validationCustom02">Last name</label-->
-				      	<input type="text" class="form-control" id="validationCustom03" placeholder="Middle name" required>
+				      	<input type="text" class="form-control" id="validationCustom03" placeholder="Website  http://... " required>
 				      	<div class="valid-feedback"> Looks good!  </div>
 				    </div>
-    				<div class="col-md-4 mb-3">
+
+					<div class="col-md-12 mb-3">
+				    	<!--label for="validationCustom02">Last name</label-->
+				      	<input type="text" class="form-control" id="validationCustom03" placeholder="Business description" required>
+				      	<div class="valid-feedback"> Looks good!  </div>
+				    </div>
+				    <div class="col-md-4 mb-3">
       					<!--label for="validationCustomUsername">Email</label-->
       					<div class="input-group">
         				<!--div class="input-group-prepend">
          	 			<span class="input-group-text" id="inputGroupPrepend">@</span>
         				</div-->
-        				<input type="text" class="form-control" id="validationCustomUsername" placeholder="Email" aria-describedby="inputGroupPrepend" required>
+        				<input type="text" class="form-control" id="validationCustomUsername" placeholder="Business Email"  required>
         				<div class="invalid-feedback">  Please provide your email. </div>
       					</div>
     				</div>
@@ -143,7 +149,7 @@
         				<!--div class="input-group-prepend">
          	 			<span class="input-group-text" id="inputGroupPrepend">@</span>
         				</div-->
-        				<input type="text" class="form-control" id="validationCustomNumber" placeholder="Phone number" required>
+        				<input type="text" class="form-control" id="validationCustomNumber" placeholder="Business Phone number" required>
         				<div class="invalid-feedback">  Please provide a valid Phone number. </div>
       					</div>
     				</div>
@@ -153,7 +159,7 @@
         				<!--div class="input-group-prepend">
          	 			<span class="input-group-text" id="inputGroupPrepend">@</span>
         				</div-->
-        				<input type="text" class="form-control" id="validationCustomNumber" placeholder="Alternative Phone number">
+        				<input type="text" class="form-control" id="validationCustomNumber" placeholder="P.O BOX ... ">
       					</div>
     				</div>
 
@@ -189,17 +195,51 @@
 
 				    <div class="col-md-3 mb-3">
 				      	<label for="validationCustom05">LGA</label>
-				      	<input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+				      	<input type="text" class="form-control" id="validationCustom05" placeholder="LGA" required>
+				      	<div class="invalid-feedback"> Please provide a valid LGA. </div>
+				    </div>
+				  	
+				  	<div class="form-group col-md-3">
+					    <label for="inputState">Bank Name</label>
+					    <select id="inputState" class="form-control" id="validationCustom04" required>
+					    	<option selected>Choose...</option>
+					        <option>...</option>
+					    </select>
+					    <div class="invalid-feedback"> Choose a your bank. </div>
+					</div>
+
+				    <div class="col-md-3 mb-3">
+				      	<label for="validationCustom05">Account Name</label>
+				      	<input type="text" class="form-control" id="validationCustom05" placeholder="Account Name" required>
+				      	<div class="invalid-feedback"> Please Business Account Name. </div>
+				    </div>
+				  	<div class="col-md-3 mb-3">
+				      	<label for="validationCustom05">Account Number</label>
+				      	<input type="text" class="form-control" id="validationCustom05" placeholder="10 digit NUBAN number" required>
 				      	<div class="invalid-feedback"> Please provide a valid zip. </div>
 				    </div>
-				  	</div>
-				  	<div class="form-group">
-				    	<div class="form-check">
-				      	<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-				      	<label class="form-check-label" for="invalidCheck"> Agree to terms and conditions </label>
-				      	<div class="invalid-feedback"> You must agree before moving to next stage. </div>
-				    	</div>
-				  	</div>
+
+				    <div class="col-md-3 mb-3">
+				    	<label for="validationCustom05">Account Type</label>
+
+				    <div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+					  <label class="form-check-label" for="exampleRadios1">
+					    Savings Account
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+					  <label class="form-check-label" for="exampleRadios2">
+					    Current Account
+					  </label>
+					</div>
+					</div>
+
+
+				</div>
+
+
   				<button class="btn btn-primary" type="submit">Stage 3</button>
 			</form>
 		</div>
