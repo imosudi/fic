@@ -36,7 +36,7 @@
 
     	<!-- load Js -->
 	{% block scripts %}
-		<!--script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script-->
+		<script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/jquery-1.11.3.min.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/bootstrap4.js')}}"></script>
 		<script async defer 
@@ -55,7 +55,6 @@
 		<script src="{{url_for('.static', filename='js/main.js')}}"></script>
 		<script>
 		// Initialize and add the map
-		//function initMap() {
 		function initMap() {
 						  // The location of FIC PLC Headquarters
 						  var fic = {lat: 6.556344, lng: 3.3695767}; //,
@@ -143,31 +142,9 @@
 			  map.setCenter(options.position);
 			}
 
-			google.maps.event.addDomListener(window, 'load', function () {
-			 initialize(position);
-			});
+			google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
-
-    <script>
-    var x = document.getElementById("demo");
-
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else { 
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-}
-
-    function showPosition(position) {
-
-document.getElementById('Latitude1').value = position.coords.latitude;
-document.getElementById('Longitude1').value = position.coords.longitude;
-
-}
-</script>
-
 	{% endblock %}
 
 	</head>
