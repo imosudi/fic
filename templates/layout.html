@@ -12,13 +12,13 @@
 
 		<!-- Css link -->
 	 {% block styles %}
+ 		<link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap4.css')}}">
 		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/font-awesome.min.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/owl.carousel.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/owl.transitions.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/animate.min.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/lightbox.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.min.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/preloader.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/image.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/icon.css')}}">
@@ -36,8 +36,8 @@
 
     	<!-- load Js -->
 	{% block scripts %}
-		<script src="{{url_for('.static', filename='js/jquery-1.11.3.min.js')}}"></script>
-		<script src="{{url_for('.static', filename='js/bootstrap.min.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
+		<script src="{{url_for('.static', filename='js/bootstrap4.js')}}"></script>
 		<script async defer 
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcU6gRJebrpJTPa8fCyqOvwQSCL7-3weY&callback=initMap">
 		</script>
@@ -150,36 +150,30 @@
 	<body id="top">
 	    <header id="navigation" class="navbar-fixed-top animated-header">
             <!--div class="container"-->
-                <div class="navbar-header">
-                    <!-- responsive nav button -->
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-                    </button>
-					<!-- /responsive nav button -->
-					
-					<!-- logo -->
-					<h1 class="navbar-brand ">
-						<a href="#body"><img src="{{url_for('.static', filename='img/logo.png')}}" height="60" width="64" alt=""></a>
-					</h1>
-					<!-- /logo -->
-                </div>
-                {% block navbar %}
-				<!-- main nav -->
-	                <nav class="collapse navbar-collapse navbar-right " role="navigation">
-	                    <ul id="nav" class="nav navbar-nav menu">
-	                        <li><a href="/">Home</a></li>
-	                        <li><a href="/register">Register</a></li>
-	                        <!--li><a href="#portfolio">Portfolio</a></li>
-	                        <li><a href="#team">Team</a></li>
-	                        <li><a href="#pricing-table">Price</a></li>
-	                        <li><a href="#blog">Blog</a></li>
-	                        <li><a href="#testimonial">Testimonial</a></li-->
-	                        <li><a href="/contact">Contact</a></li>
-	                    </ul>
-	                </nav>
+            {% block navbar %}
+            <div class="container">
+            	<div class="container header clearfix fixed-top ">
+        			<nav>
+          				<ul class="nav nav-pills float-right">
+          					<li class="nav-item">
+            					<a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
+            				</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="/register">Register</a>
+		    				</li>
+		    				<li class="nav-item">
+								<a class="nav-link " href="/contact"> Contact</a>
+							</li>
+							<li class="nav-item">
+    							<a class="nav-link " href="/about"> About</a>
+    		    			</li>
+				        </ul>
+        			</nav>
+					<!--h3 class="font-weight-bold" >
+        				<a href="/" class="text-primary" style="font-family: 'Indie Flower', cursive;">notes</a><a href="/" class="text-success" style="font-family: 'Raleway', sans-serif;">App</a></h3-->
+        				<a href="#body"><img src="{{url_for('.static', filename='img/logo.png')}}" height="60" width="64" alt=""></a>
+      			</div>
+      		</div>
 				<!-- /main nav -->
 				{% endblock %}
 				
