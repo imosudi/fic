@@ -88,7 +88,7 @@
 
 				    <div class="col-md-3 mb-3">
 				      	<label for="validationCustom05">LGA</label>
-				      	<input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+				      	<input type="text" class="form-control" id="validationCustom05" placeholder="LGA" required>
 				      	<div class="invalid-feedback"> Please provide a valid zip. </div>
 				    </div>
 				  	</div>
@@ -223,7 +223,7 @@
 				    	<label for="validationCustom05">Account Type</label>
 
 				    <div class="form-check">
-					  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+					  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
 					  <label class="form-check-label" for="exampleRadios1">
 					    Savings Account
 					  </label>
@@ -244,7 +244,50 @@
 			</form>
 		</div>
 
-			
+<br>
+
+<div class="container">
+			<div class="row">
+				<!--div class="col-md-6 mb-12 title offset-md-3" style="text-align: center;"-->
+					<h3 class="col-md-6 mb-12 title offset-md-3" style="text-align: center;">Location Details</h3>
+			</div>
+			<form class="needs-validation offset-md-1 border border-success rounded" novalidate>
+  				<div class="form-row">
+    				<div class="list-group-item" style="height: 450px;"><div class="col-md-12"><div id="googleMap" style="width:100%; height:380px;"></div><div class="col-md-12"><div class="row"><div class="col-md-4">
+
+ <input name="longitude1" type="text" class="form-control" readonly="readonly" id="Longitude1" />Longitude</div><div class="col-md-4">
+<input name="latitude1" class="form-control" type="text" readonly="readonly" id="Latitude1" />Latitude</div><div class="col-md-4">
+<input id="getMapping" class="btn btn-success btn-md active" value="Mapping Details " onclick="getLocation();"  OnLoad="getLocation();"/><br /> 
+<script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+}
+
+    function showPosition(position) {
+
+document.getElementById('Latitude1').value = position.coords.latitude;
+document.getElementById('Longitude1').value = position.coords.longitude;
+
+}
+</script>
+
+    				
+
+    				    			
+  				</div>
+				  	
+				  	
+				  	
+  				<button class="btn btn-primary" type="submit"> Submit </button>
+			</form>
+		</div>
+<br>			
 
 
 
