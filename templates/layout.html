@@ -55,13 +55,13 @@
 		<script>
 		// Initialize and add the map
 		function initMap() {
-						  // The location of Uluru
+						  // The location of FIC PLC Headquarters
 						  var fic = {lat: 6.556344, lng: 3.3695767}; //,
-						  // The map, centered at Uluru
-						  var map = new google.maps.Map(
+						  // The map, centered at FIC PLC Headquarters
+						  var map1 = new google.maps.Map(
 						      document.getElementById('mapmio'), {zoom: 15, center: fic});
-						  // The marker, positioned at Uluru
-						  var marker = new google.maps.Marker({position: fic, map: map});
+						  // The marker, positioned at FIC PLC Headquarters
+						  var marker = new google.maps.Marker({position: fic, map: map1});
 							}
 		</script>
 		<script>
@@ -72,7 +72,7 @@
 			  var mapOptions = {
 							    zoom: 16
 							  };
-			  map = new google.maps.Map(document.getElementById("googleMap"),
+			  map = new google.maps.Map(document.getElementById('googleMap'),
 			      mapOptions);
 
 			  // Try HTML5 geolocation
