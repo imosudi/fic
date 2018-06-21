@@ -202,16 +202,41 @@ document.getElementById('Longitude1').value = position.coords.longitude;
         			<nav>
           				<ul class="nav nav-pills float-right">
           					<li class="nav-item">
-            					<a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
+            					{% if page=='home' %} 
+									{% raw %} <a class="nav-link active" href="/"> {% endraw %}
+								{% endif %}
+								{% if page!='home' %}
+									{% raw %} <a class="nav-link" href="/"> {% endraw %}
+								{% endif %}
+
+										Home <span class="sr-only">(current)</span></a>
             				</li>
+
 							<li class="nav-item">
-								<a class="nav-link active" href="/register">Register</a>
-		    				</li>
-		    				<li class="nav-item">
-								<a class="nav-link " href="/contact"> Contact</a>
+								{% if page=='register' %} 
+									{% raw %} <a class="nav-link active" href="/register">Register</a> {% endraw %}
+								{% endif %}
+								{% if page!='register' %} 
+									{% raw %}<a class="nav-link " href="/register">Register</a> {% endraw %}
+								{% endif %}
 							</li>
+
+		    				<li class="nav-item">
+								{% if page=='contact' %} 
+									{% raw %} <a class="nav-link active"  href="/contact"> Contact</a> {% endraw %}
+								{% endif %}
+								{% if page!='contact' %} 
+									{% raw %} <a class="nav-link " href="/contact"> Contact</a> {% endraw %}
+								{% endif %}
+							</li>
+
 							<li class="nav-item">
-    							<a class="nav-link " href="/about"> About</a>
+    							{% if page=='about' %} 
+									{% raw %} <a class="nav-link active" href="/about"> About</a> {% endraw %}
+								{% endif %}
+								{% if page!='about' %} 
+									{% raw %} <a class="nav-link " href="/contact"> About</a> {% endraw %}
+								{% endif %}
     		    			</li>
 				        </ul>
         			</nav>

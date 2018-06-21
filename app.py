@@ -5,9 +5,9 @@ app = Flask(__name__)
 Bootstrap(app)
 
 @app.route('/')
-def hello_world():
-    #return 'Hello, World!'
-    return  render_template('index.html')
+def home():
+    page='home'
+    return  render_template('index.html', page=page)
 
 @app.route('/contact')
 def contact():
@@ -19,6 +19,11 @@ def contact():
 def register():
 	page= 'register'
 	return render_template('register.html', page=page)
+
+@app.route('/about')
+def about():
+	page= 'register'
+	return render_template('about.html', page=page)
 
 
 @app.errorhandler(404)
