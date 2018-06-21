@@ -203,7 +203,7 @@ document.getElementById('Longitude1').value = position.coords.longitude;
           				<ul class="nav nav-pills float-right">
           					<li class="nav-item">
             					{% if page=='home' %} 
-									{% raw %} <a class="nav-link active" href="/"> {% endraw %}
+									{% raw %} <a class="nav-link active" href="#"> {% endraw %}
 								{% endif %}
 								{% if page!='home' %}
 									{% raw %} <a class="nav-link" href="/"> {% endraw %}
@@ -214,7 +214,7 @@ document.getElementById('Longitude1').value = position.coords.longitude;
 
 							<li class="nav-item">
 								{% if page=='register' %} 
-									{% raw %} <a class="nav-link active" href="/register">Register</a> {% endraw %}
+									{% raw %} <a class="nav-link active" href="#">Register</a> {% endraw %}
 								{% endif %}
 								{% if page!='register' %} 
 									{% raw %}<a class="nav-link " href="/register">Register</a> {% endraw %}
@@ -223,7 +223,7 @@ document.getElementById('Longitude1').value = position.coords.longitude;
 
 		    				<li class="nav-item">
 								{% if page=='contact' %} 
-									{% raw %} <a class="nav-link active"  href="/contact"> Contact</a> {% endraw %}
+									{% raw %} <a class="nav-link active"  href="#"> Contact</a> {% endraw %}
 								{% endif %}
 								{% if page!='contact' %} 
 									{% raw %} <a class="nav-link " href="/contact"> Contact</a> {% endraw %}
@@ -232,10 +232,10 @@ document.getElementById('Longitude1').value = position.coords.longitude;
 
 							<li class="nav-item">
     							{% if page=='about' %} 
-									{% raw %} <a class="nav-link active" href="/about"> About Us</a> {% endraw %}
+									{% raw %} <a class="nav-link active" href="#"> About Us</a> {% endraw %}
 								{% endif %}
 								{% if page!='about' %} 
-									{% raw %} <a class="nav-link " href="/contact"> About Us</a> {% endraw %}
+									{% raw %} <a class="nav-link " href="/about"> About Us</a> {% endraw %}
 								{% endif %}
     		    			</li>
 				        </ul>
