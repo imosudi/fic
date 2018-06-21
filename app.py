@@ -22,7 +22,7 @@ def register():
 
 @app.route('/about')
 def about():
-	page= 'register'
+	page= 'about'
 	return render_template('about.html', page=page)
 
 
