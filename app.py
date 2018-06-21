@@ -1,5 +1,9 @@
 from flask import Flask, render_template, url_for
 from flask_bootstrap import Bootstrap
+
+from forms import *
+from views import *
+
 app = Flask(__name__)
 
 Bootstrap(app)
