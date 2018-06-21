@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/font-awesome.min.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/owl.carousel.css')}}">
+		<link rel="stylesheet" href="{{url_for('.static', filename='css/carousel_4.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/owl.transitions.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/animate.min.css')}}">
 		<link rel="stylesheet" href="{{url_for('.static', filename='css/lightbox.css')}}">
@@ -194,8 +195,11 @@ document.getElementById('Longitude1').value = position.coords.longitude;
 
 	</head>
 	<body id="top">
-	    <header id="navigation" class="navbar-fixed-top animated-header">
+	    <header id="navigation" class="navbar-fixed-top navbar-expand-md animated-header" style="padding-bottom: 5px;">
             <!--div class="container"-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        		<span class="navbar-toggler-icon"></span>
+      		</button>
             {% block navbar %}
             <div class="container">
             	<div class="container header clearfix fixed-top ">
@@ -250,14 +254,14 @@ document.getElementById('Longitude1').value = position.coords.longitude;
 				
             <!--/div-->
         </header>
-    <div class="wrapper">
+    <div class="wrapper" style="padding-bottom: 5px;padding-top: 5px;">
 <br>
 
     {% block content %}{% endblock %}
 
 	
     {% block footer %}
-		<footer>
+		<footer style="padding-bottom: 5px;padding-top: 5px;">
 			<!--div class="container"-->
 				<div class="row">
 					<div class="col-md-12">
