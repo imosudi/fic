@@ -258,24 +258,7 @@
  <input name="longitude1" type="text" class="form-control" readonly="readonly" id="Longitude1" />Longitude</div><div class="col-md-4">
 <input name="latitude1" class="form-control" type="text" readonly="readonly" id="Latitude1" />Latitude</div><div class="col-md-4">
 <input id="getMapping" class="btn btn-success btn-md active" value="Mapping Details " onclick="getLocation();"  OnLoad="getLocation();"/><br /> 
-<script>
-    var x = document.getElementById("demo");
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else { 
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-}
-
-    function showPosition(position) {
-
-document.getElementById('Latitude1').value = position.coords.latitude;
-document.getElementById('Longitude1').value = position.coords.longitude;
-
-}
-</script>
 
     				
 

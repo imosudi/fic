@@ -11,12 +11,14 @@ def hello_world():
 
 @app.route('/contact')
 def contact():
-	return render_template('contact.html')
+	page = 'contact'
+	return render_template('contact.html', page=page)
 
 
 @app.route('/register')
 def register():
-	return render_template('register.html')
+	page= 'register'
+	return render_template('register.html', page=page)
 
 
 @app.errorhandler(404)
