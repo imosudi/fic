@@ -1,4 +1,5 @@
 from flask import render_template
+from app import app
 
 @app.route('/registeration', methods=['GET', 'POST'])
 def registeration():
