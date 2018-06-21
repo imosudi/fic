@@ -1,12 +1,73 @@
-from flask import Flask, render_template, url_for
+#import virtualenv python library directory
+import os
+import sys
+sys.path.insert(0, '/var/www/clients/client6/web28/cgi-bin/venv/lib/python2.7/site-packages')
+
+
+#import installed library
+from flask import Flask, render_template, redirect, request, session, flash, url_for
 from flask_bootstrap import Bootstrap
+from flask_admin import Admin
+from flask_moment import Moment
+from datetime import datetime
+#from flask_script import Manager
+from flask_wtf import FlaskForm
 
-#from forms import *
-from views import *
+#Import 3rd Party
+from flask_mysqldb import MySQL
+from wtforms import Form, BooleanField, StringField, PasswordField, validators, SubmitField, IntegerField, HiddenField
+from wtforms.validators import Required
+from passlib.hash import sha256_crypt
 
+
+#Third party imports
+from flask_sqlalchemy import SQLAlchemy
+from functools import wraps
+
+#Create application
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'This is really hard to guess string'
 
-Bootstrap(app)
+# init Flask Bootstrap
+bootstrap = Bootstrap(app)
+moment = Moment(app)
+admin = Admin(app)
+
+
+#manager = Manager(app)
+
+
+#Config MySQL
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'c6noteapp'
+app.config['MYSQL_PASSWORD'] = 'imosudi@gmail.com'
+app.config['MYSQL_DB'] = 'c6noteapp'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
+# init MySQL
+mysql = MySQL(app)
+
+
+"""
+python
+from noteapp import db
+db.create_all()
+"""
+
+from models import *
+
+
+# Check user login status
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+	if 'logged_in' in session:
+	    return f(*args, **kwargs)
+	else:
+	    flash(u'Unauthorized, Please login', 'danger')
+	    return redirect(url_for('login'))
+    return wrap
+
 
 @app.route('/')
 def home():
