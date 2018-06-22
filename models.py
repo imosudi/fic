@@ -11,7 +11,7 @@ from flask_wtf import FlaskForm
 
 from wtforms import Form, StringField, SubmitField, IntegerField, HiddenField, validators, BooleanField, PasswordField
 from wtforms.validators import Required
-#from wtforms.widgets import TextArea
+from wtforms.widgets import TextArea
 
 """
 class Note(db.Model):

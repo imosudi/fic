@@ -1,7 +1,8 @@
 #import virtualenv python library directory
 import os
 import sys
-sys.path.insert(0, '/var/www/clients/client6/web28/cgi-bin/venv/lib/python2.7/site-packages')
+#sys.path.insert(0, '/var/www/clients/client6/web28/cgi-bin/venv/lib/python2.7/site-packages')
+sys.path.insert(0, 'venv/lib/python2.7/site-packages')
 
 
 #import installed library
@@ -17,7 +18,7 @@ from flask_wtf import FlaskForm
 from flask_mysqldb import MySQL
 from wtforms import Form, BooleanField, StringField, PasswordField, validators, SubmitField, IntegerField, HiddenField
 from wtforms.validators import Required
-from passlib.hash import sha256_crypt
+#from passlib.hash import sha256_crypt
 
 
 #Third party imports
@@ -26,7 +27,7 @@ from functools import wraps
 
 #Create application
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'This is really hard to guess string'
+app.config['SECRET_KEY'] = 'This is really hard to guess string added by Mosudi Isiaka'
 
 # init Flask Bootstrap
 bootstrap = Bootstrap(app)
@@ -39,9 +40,9 @@ admin = Admin(app)
 
 #Config MySQL
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'c6noteapp'
+app.config['MYSQL_USER'] = 'ficplc'
 app.config['MYSQL_PASSWORD'] = 'imosudi@gmail.com'
-app.config['MYSQL_DB'] = 'c6noteapp'
+app.config['MYSQL_DB'] = 'ficplc'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 # init MySQL
