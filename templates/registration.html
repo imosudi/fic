@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container content-center">
+	<div class="row">
+		<h3 class="col-md-6 mb-12  offset-md-3" style="text-align: center;">
+			<p> Personal Details </p>
+			<br>
+		</h3>
+
+		{% from "includes/_formhelpers.html" import render_field %}
+		<form method="POST" action="" class="container needs-validation offset-md-1 border border-success rounded" novalidate">
+			<div class="form-row">
+				<br>
+
+				<div class="col-md-4 mb-3">
+					{{render_field(form.first_name, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.last_name, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.middle_name, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.email, class_="form-control")}}
+				</div>
+
+
+				<div class="form-group">
+					{{render_field(form.phone_number1, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.phone_number2, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.address_line1, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.address_line2, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.city, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.state, class_="form-control")}}
+				</div>
+
+				<div class="form-group">
+					{{render_field(form.lga, class_="form-control")}}
+				</div>
+
+				<div class="form-check">
+					{{render_field(form.accept_tos, class_="form-check-label")}}
+					I accept Terms and Conditions.
+				</div>
+			</div>
+
+				<p>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</p>
+
+		</form>
+	</div>
+</div>
+<br>
+<br>
+
+
+{% endblock %}

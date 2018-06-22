@@ -1,6 +1,12 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from flask_bootstrap import Bootstrap
+
+
+from models import *
+
 app = Flask(__name__)
+
+
 
 Bootstrap(app)
 
@@ -24,6 +30,18 @@ def register():
 def about():
 	page= 'about'
 	return render_template('about.html', page=page)
+
+
+
+@app.route('/registration')
+def registration():
+	page = 'registration'
+	form = personalForm(request.form)
+	return render_template('registration.html', page=page, form=form)
+
+
+
+
 
 
 @app.errorhandler(404)
