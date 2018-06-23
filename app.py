@@ -36,8 +36,9 @@ def about():
 @app.route('/registration')
 def registration():
 	page = 'registration'
-	form = personalForm(request.form)
-	return render_template('registration.html', page=page, form=form)
+	formP = personalForm(request.form)
+	formB = businessForm(request.form)
+	return render_template('registration.html', page=page, formP=formP, formB=formB)
 
 
 
