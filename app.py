@@ -38,7 +38,8 @@ def registration():
 	page = 'registration'
 	formP = personalForm(request.form)
 	formB = businessForm(request.form)
-	return render_template('registration.html', page=page, formP=formP, formB=formB)
+	formL = locationForm(request.form)
+	return render_template('registration.html', page=page, formP=formP, formB=formB, formL=formL)
 
 
 

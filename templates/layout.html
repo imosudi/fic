@@ -12,19 +12,32 @@
 
 		<!-- Css link -->
 	 {% block styles %}
- 		<link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap4.css')}}">
-		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/font-awesome.min.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/carousel_4.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/owl.transitions.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/animate.min.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/lightbox.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/preloader.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/image.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/icon.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}}">
-		<link rel="stylesheet" href="{{url_for('.static', filename='css/responsive.css')}}">
+ 		<link rel="stylesheet" 
+ 		href="{{url_for('.static', filename='css/bootstrap4.css')}}">
+		<link rel="stylesheet" 
+		href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/font-awesome.min.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/owl.carousel.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/carousel_4.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/owl.transitions.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/animate.min.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/lightbox.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/preloader.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/image.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/icon.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/style.css')}}">
+		<link rel="stylesheet" 
+		href="{{url_for('.static', filename='css/responsive.css')}}">
 		<style>
 		       /* Set the size of the div element that contains the map */
 		      #mapmio {
@@ -40,7 +53,12 @@
 		<!--script src="{{url_for('.static', filename='js/jquery-3.2.1.slim.min.js')}}"></script-->
 		<script src="{{url_for('.static', filename='js/jquery-1.11.3.min.js')}}"></script>
 		<script src="{{url_for('.static', filename='js/bootstrap4.js')}}"></script>
-		{% if page == 'register' %} 
+		{% if page == 'register'  %} 
+		{% raw %}
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDcU6gRJebrpJTPa8fCyqOvwQSCL7-3weY&callback=initMap"></script>
+		{% endraw %}
+		{% endif %}
+		{% if page == 'registration' %} 
 		{% raw %}
 		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDcU6gRJebrpJTPa8fCyqOvwQSCL7-3weY&callback=initMap"></script>
 		{% endraw %}
@@ -79,7 +97,7 @@
 	{% endraw %}
 	{% endif %}
 
-	{% if page == 'register' %} 
+	{% if page == 'register' or page == 'registration' %} 
 	{% raw %}
 		<script>
 			var map;
@@ -264,7 +282,7 @@ document.getElementById('Longitude1').value = position.coords.longitude;
 		<footer style="padding-bottom: 5px;padding-top: 5px;">
 			<!--div class="container"-->
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-12 text-success">
 						<div class="block">
 							<a href="#"><img src="{{url_for('.static', filename='img/logo.png')}}" alt=""></a>
 							<p>© 2018 All rights reserved <a href="https://one.net.ng/" target="_blank">One Network</a></p>
