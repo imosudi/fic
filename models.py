@@ -5,7 +5,7 @@ from wtforms import Form, StringField, SelectMultipleField, SubmitField, RadioFi
 from wtforms.validators import Required
 from wtforms.widgets import TextArea
 
-#from app import db
+from app import db
 """
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
