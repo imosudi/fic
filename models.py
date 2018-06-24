@@ -66,6 +66,12 @@ class personalForm(Form):
     state = StringField('State', [validators.Length(min=5, max=50), validators.DataRequired()])
     lga = StringField('LGA', [validators.Length(min=5, max=50), validators.DataRequired()])
 
+    def validate_email(self, field):
+        if PersonalForm.query.filter_by(email=field.data).first():
+            raise ValidationError('Email is already in use.')
+
+    
+
     #username = StringField('Username', [validators.Length(min=4, max=25)])
     """password = PasswordField('New Password', [
                     validators.DataRequired(),
