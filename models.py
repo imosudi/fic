@@ -65,6 +65,8 @@ class personalForm(Form):
     city = StringField('City', [validators.Length(min=5, max=50)])
     state = StringField('State', [validators.Length(min=5, max=50), validators.DataRequired()])
     lga = StringField('LGA', [validators.Length(min=5, max=50), validators.DataRequired()])
+    accept_tos = BooleanField('I accept the TOS', [validators.DataRequired()])
+    submit = SubmitField('Next stage')
 
     def validate_email(self, field):
         if PersonalForm.query.filter_by(email=field.data).first():
@@ -78,8 +80,6 @@ class personalForm(Form):
                     validators.EqualTo('confirm', message='Passwords must match')
                 ])
                 confirm = PasswordField('Repeat Password')"""
-    accept_tos = BooleanField('I accept the TOS', [validators.DataRequired()])
-    submit = SubmitField('Next stage')
 
 
 
