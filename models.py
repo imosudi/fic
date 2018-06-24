@@ -40,8 +40,17 @@ class PersonalForm(db.Model):
 
     """
     def __init__(self, title, body):
-        self.title = title
-        self.body = body
+        self.first_name = first_name
+        self.last_name = last_name
+        self.middle_name = middle_name
+        self.email = email
+        self.phone_number1 = phone_number1
+        self.phone_number2 = phone_number2
+        self.address_line1 = address_line1
+        self.address_line2 = address_line2
+        self.city = city
+        self.state = state
+        self.lga = lga
 
 
 class personalForm(Form):

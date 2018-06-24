@@ -57,6 +57,14 @@ def registration():
 	return render_template('registration.html', page=page, formP=formP, formB=formB, formL=formL)
 
 
+@app.route('/reg')
+def reg():
+	page = 'reg'
+	formP = personalForm(request.form)
+	formB = businessForm(request.form)
+	formL = locationForm(request.form)
+	return render_template('reg.html', page=page, formP=formP, formB=formB, formL=formL)
+
 
 
 
