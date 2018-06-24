@@ -1,0 +1,330 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container content-center">
+	<div class="row">
+		<h3 class="col-md-6 mb-12  offset-md-3 text-success" style="text-align: center;">
+			<p> Personal Details </p>
+			<br>
+		</h3>
+
+		{% from "includes/_formhelpers.html" import render_field %}
+		<form method="POST" action="" class="container needs-validation offset-md-1 border border-success rounded" novalidate">
+			<div class="form-row">
+				<br>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.first_name, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.last_name, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.middle_name, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.email, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.phone_number1, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.phone_number2, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-12 mb-3">
+					<div class="input-group">
+						{{render_field(formP.address_line1, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-12 mb-3">
+					<div class="input-group">
+						{{render_field(formP.address_line2, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.city, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.state, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formP.lga, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-6 mb-3">
+					<div class="form-check">
+						{{render_field(formP.accept_tos, class_="form-check-label")}}
+					I accept Terms and Conditions.
+					</div>
+				</div>
+			</div>
+
+				<p>
+					<div>
+						{{render_field(formP.submit, class_="btn btn-success" )}}
+					</div>
+				</p>
+
+		</form>
+	</div>
+
+<br>
+<br>
+
+
+	<!--div class="row">
+		<h3 class="col-md-6 mb-12  offset-md-3 text-success" style="text-align: center;">
+			<p> Business Details </p>
+			<br>
+		</h3>
+
+		{% from "includes/_formhelpers.html" import render_field %}
+		<form method="POST" action="" class="container needs-validation offset-md-1 border border-success rounded" novalidate">
+			<div class="form-row">
+				<br>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.business_name, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.business_rc, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.website, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-12 mb-3">
+					<div class="input-group">
+						{{render_field(formB.business_description, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.business_email, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.business_phone, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.mailbox, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-12 mb-3">
+					<div class="input-group">
+						{{render_field(formB.bus_address_line1, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-12 mb-3">
+					<div class="input-group">
+						{{render_field(formB.bus_address_line2, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.bus_city, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.bus_state, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<div class="input-group">
+						{{render_field(formB.bus_lga, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-3 mb-3">
+					<div class="input-group">
+						{{render_field(formB.bank_name, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-3 mb-3">
+					<div class="input-group">
+						{{render_field(formB.account_name, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-3 mb-3">
+					<div class="input-group">
+						{{render_field(formB.account_number, class_="form-control")}}
+					</div>
+				</div>
+
+				<div class="col-md-3 mb-3">
+				    <div class="form-check">
+				    	{{render_field(formB.account_type, class_="form-check-label text-success")}}
+				    </div>
+				</div>
+				<p>
+					<div>
+						{{render_field(formB.submit, class_="btn btn-success" )}}
+					</div>
+				</p>
+			</div>
+		</form>
+	</div>
+<br>
+<br-->
+
+
+
+	<!--div class="row">
+		<h3 class="col-md-6 mb-12  offset-md-3 text-success" style="text-align: center;">
+			<p> Location Details </p>
+			<br>
+		</h3>
+
+		{% from "includes/_formhelpers.html" import render_field %}
+		<form method="POST" action="" class="container needs-validation offset-md-1 border border-success rounded" novalidate">
+			<div class="form-row">
+				<br>
+				<div id="googleMap" style="width:100%; height:380px;"></div>
+			</div>
+			<br>
+			<div class="form-row">
+		  	<div class="input-group col-md-4 mb-3">
+		  		<div class="input-group-prepend">
+		      		<div class="input-group-text">Longitude:</div>
+		    	</div>
+		    	{{render_field(formL.longitude1, class_="form-control font-weight-bold")}}
+		    	
+		  	</div>
+
+		  	<div class="input-group col-md-4 mb-3">
+		    	<div class="input-group-prepend">
+		      		<div class="input-group-text">Latitude  :</div>
+		    	</div>
+		    	{{render_field(formL.latitude1, class_="form-control font-weight-bold")}}
+		    	
+		  	</div>
+	 
+		  	<button  class="btn btn-success col-md-4 mb-3" disabled=""  >  Mapping Details</button>
+		  	<div class="input-group col-md-8 mb-3">
+		    	<div class="input-group-prepend">
+		      		<div class="input-group-text">Business History  :</div>
+		    	   		{{render_field(formL.business_history, class_="form-control form-check form-check-inline  text-success")}}
+		    	   	</div>
+		  	</div>
+		  	
+		  	</div>
+
+		  	<div class="col-md-12 mb-3 text-success">
+					<div class="form-check">
+						{{render_field(formL.accept_tos, class_="form-check-label text-success")}}
+						[ I AGREE ] By submitting this application for our organisation to be approved as a location for Financial Inclussion Center using the One Network Online Agent Management and Transaction Platform, we hereby certify that all documentation provided are correct and authorize staff or agents of One Network to conduct a verification excise based on the infomation provided.
+						                        
+					</div>
+			</div>
+			
+				<p>
+					<div>
+						{{render_field(formL.submit, class_="btn btn-success" )}}
+					</div>
+				</p>
+
+
+  		  	</div>
+
+
+  		  	
+
+			<script>
+			    var x = document.getElementById("demo");
+
+			    window.onload = function getLocation() {
+			        if (navigator.geolocation) {
+			            navigator.geolocation.getCurrentPosition(showPosition);
+			        } else { 
+			            x.innerHTML = "Geolocation is not supported by this browser.";
+			        }
+					}
+
+					    function showPosition(position) {
+
+					document.getElementById('latitude1').value = position.coords.latitude;
+					document.getElementById('longitude1').value = position.coords.longitude;
+
+					}
+			</script>
+
+
+
+		</form>
+	</div>
+	<br>
+	<br-->
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+</div>
+{% endblock %}
