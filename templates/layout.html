@@ -280,13 +280,13 @@ document.getElementById('Longitude1').value = position.coords.longitude;
 	
     {% block footer %}
 		<!--footer  class="clearfix container footer fixed-bottom" style="padding-bottom: 5px;padding-top: 5px; border: 0px solid #008000; background-color:#F4AE00; height: 75px;"-->
-		<footer>
+		<footer style="height: 75px; padding-bottom: 5px;padding-top: 5px;">
 			<!--div class="container"-->
 				<div class="row">
 					<div class="col-md-12 text-success">
-						<div class="block">
+						<div class="block"><p>
 							<a href="#"><img src="{{url_for('.static', filename='img/logo.png')}}" alt=""></a>
-							<p>© 2018 All rights reserved <a href="https://one.net.ng/" target="_blank">One Network</a></p>
+							© 2018 All rights reserved <a href="https://one.net.ng/" target="_blank">One Network</p>
 						</div>
 					</div>
 				</div>
