@@ -24,22 +24,15 @@ class PersonalForm(db.Model):
     middle_name = db.Column(db.String(60), index=True)
     email = db.Column(db.String(60), index=True, unique=True)
     phone_number1 = db.Column(db.String(60), index=True, unique=True)
-    phone_number2 = db.Column(db.String(60), index=True, unique=True)
-    address_line1 = db.Column(db.String(160), index=True, unique=True)
-    address_line2 = db.Column(db.String(160), index=True, unique=True)
+    phone_number2 = db.Column(db.String(60), index=True)
+    address_line1 = db.Column(db.String(160), index=True)
+    address_line2 = db.Column(db.String(160), index=True)
     city = db.Column(db.String(60), index=True)
     state = db.Column(db.String(60), index=True)
     lga = db.Column(db.String(60), index=True)
-    """
-    first_name
-    last_name
-    middle_name
-    email
-    phone_number1
-    phone_number2
-
-    """
-    def __init__(self, title, body):
+    
+    def __init__(self, first_name, last_name, middle_name, email, phone_number1,
+                phone_number2, address_line1, address_line2, city, state, lga):
         self.first_name = first_name
         self.last_name = last_name
         self.middle_name = middle_name
@@ -51,6 +44,44 @@ class PersonalForm(db.Model):
         self.city = city
         self.state = state
         self.lga = lga
+
+"""class BusinessForm(db.Model):
+    __tablename__ = 'BusinessForm'
+    business_name = db.Column(db.String(60), index=True)
+    business_rc = db.Column(db.String(60), index=True)
+    business_description = db.Column(db.String(60), index=True)
+    website = db.Column(db.String(60), index=True)
+    business_email = db.Column(db.String(60), index=True)
+    business_phone =  db.Column(db.String(60), index=True)
+    mailbox = db.Column(db.String(60), index=True)
+    bus_address_line1 = db.Column(db.String(60), index=True)
+    bus_address_line2 = db.Column(db.String(60), index=True)
+    bus_city = db.Column(db.String(60), index=True)
+    bus_state = db.Column(db.String(60), index=True)
+    bus_lga = db.Column(db.String(60), index=True)
+    bank_name = db.Column(db.String(60), index=True)
+    account_name =  db.Column(db.String(60), index=True)
+    account_number = db.Column(db.String(60), index=True)
+    account_type = db.Column(db.String(60), index=True)
+
+    
+    def __init__(self, business_name, business_rc, business_description, website, business_email, business_phone, mailbox, bus_address_line1, bus_address_line2, bus_city, bus_state, bus_lga, bank_name, account_name, account_number, account_type):
+        self.business_name
+        self.business_rc
+        self.business_description
+        self.website
+        self.business_email
+        self.business_phone
+        self.mailbox
+        self.bus_address_line1
+        self.bus_address_line2
+        self.bus_city
+        self.bus_state
+        self.bus_lga
+        self.bank_name
+        self.account_name
+        self.account_number
+        self.account_type"""
 
 
 class personalForm(Form):

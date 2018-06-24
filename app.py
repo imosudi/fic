@@ -20,6 +20,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
 
+
+#This is actually needed by the form classes to load db.Models, so I will create
+#another py file forms.py
+
 from models import *
 
 
@@ -63,6 +67,11 @@ def reg():
 	formP = personalForm(request.form)
 	formB = businessForm(request.form)
 	formL = locationForm(request.form)
+	if request.method == 'POST' and  formP.validate():
+		name = formP.name.data
+		username = formP.username.data
+		email = formP.email.data
+		#password = sha256_crypt.encrypt(str(form.password.data))
 	return render_template('reg.html', page=page, formP=formP, formB=formB, formL=formL)
 
 
