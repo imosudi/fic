@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 
 
-app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://imosudific:imosudificpassword@35.184.110.46/imosudific'
 #sql2.freemysqlhosting.net	sql2244352	sql2244352
