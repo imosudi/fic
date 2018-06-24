@@ -5,9 +5,9 @@ from wtforms import Form, StringField, SelectMultipleField, SubmitField, RadioFi
 from wtforms.validators import Required
 from wtforms.widgets import TextArea
 
-#from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
-from app import db
+from app import app, db
 
 """
 class Note(db.Model):
@@ -18,6 +18,11 @@ class Note(db.Model):
         self.title = title
         self.body = body
 """
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://imosudific:imosudificpassword@35.184.110.46/imosudific'
+#sql2.freemysqlhosting.net  sql2244352  sql2244352
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
 
 class personalForm(db.Model):
     id = db.Column(db.Integer, primary_key=True)
