@@ -1,10 +1,23 @@
 from flask import Flask, render_template, url_for, request
 from flask_bootstrap import Bootstrap
 
+from flask_sqlalchemy import SQLAlchemy
+
 
 from models import *
 
 app = Flask(__name__)
+
+
+
+app = Flask(__name__)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://imosudific:imosudificpassword@35.184.110.46/imosudific'
+#sql2.freemysqlhosting.net	sql2244352	sql2244352
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
+
+db = SQLAlchemy(app)
 
 
 
