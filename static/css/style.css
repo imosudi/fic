@@ -224,9 +224,9 @@ header .navbar {
    Home page style
    ================= */
 #banner {
-  background: url('../img/banner.jpg');
+  background: url('../img/banner.png');
   background-size: cover;
-  padding: 250px 0;
+  padding: 5px 0;
   position: relative;
 }
 #banner:before {
