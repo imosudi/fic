@@ -5,9 +5,6 @@ from wtforms import Form, StringField, SelectMultipleField, SubmitField, RadioFi
 from wtforms.validators import Required
 from wtforms.widgets import TextArea
 
-from flask_sqlalchemy import SQLAlchemy
-
-from app import db
 
 """
 class Note(db.Model):
@@ -18,15 +15,6 @@ class Note(db.Model):
         self.title = title
         self.body = body
 """
-
-class PersonalForm(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80))
-    body = db.Column(db.Text)
-    def __init__(self, title, body):
-        self.title = title
-        self.body = body
-
 
 class personalForm(Form):
     first_name = StringField('First name', [validators.Length(min=5, max=50), validators.DataRequired()])
