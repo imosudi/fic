@@ -16,10 +16,29 @@ class Note(db.Model):
         self.body = body
 """
 
-class Note(db.Model):
+class PersonalForm(db.Model):
+    __tablename__ = 'PersonalForm'
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80))
-    body = db.Column(db.Text)
+    first_name = db.Column(db.String(60), index=True)
+    last_name = db.Column(db.String(60), index=True)
+    middle_name = db.Column(db.String(60), index=True)
+    email = db.Column(db.String(60), index=True, unique=True)
+    phone_number1 = db.Column(db.String(60), index=True, unique=True)
+    phone_number2 = db.Column(db.String(60), index=True, unique=True)
+    address_line1 = db.Column(db.String(160), index=True, unique=True)
+    address_line2 = db.Column(db.String(160), index=True, unique=True)
+    city = db.Column(db.String(60), index=True)
+    state = db.Column(db.String(60), index=True)
+    lga = db.Column(db.String(60), index=True)
+    """
+    first_name
+    last_name
+    middle_name
+    email
+    phone_number1
+    phone_number2
+
+    """
     def __init__(self, title, body):
         self.title = title
         self.body = body
