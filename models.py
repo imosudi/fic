@@ -45,8 +45,9 @@ class PersonalForm(db.Model):
         self.state = state
         self.lga = lga
 
-"""class BusinessForm(db.Model):
+class BusinessForm(db.Model):
     __tablename__ = 'BusinessForm'
+    id = db.Column(db.Integer, primary_key=True)
     business_name = db.Column(db.String(60), index=True)
     business_rc = db.Column(db.String(60), index=True)
     business_description = db.Column(db.String(60), index=True)
@@ -65,25 +66,44 @@ class PersonalForm(db.Model):
     account_type = db.Column(db.String(60), index=True)
 
     
-    def __init__(self, business_name, business_rc, business_description, website, business_email, business_phone, mailbox, bus_address_line1, bus_address_line2, bus_city, bus_state, bus_lga, bank_name, account_name, account_number, account_type):
-        self.business_name
-        self.business_rc
-        self.business_description
-        self.website
-        self.business_email
-        self.business_phone
-        self.mailbox
-        self.bus_address_line1
-        self.bus_address_line2
-        self.bus_city
-        self.bus_state
-        self.bus_lga
-        self.bank_name
-        self.account_name
-        self.account_number
-        self.account_type"""
+    def __init__(self, business_name, business_rc, business_description, website,
+                business_email, business_phone, mailbox, bus_address_line1, bus_address_line2,
+                bus_city, bus_state, bus_lga, bank_name, account_name, account_number, account_type):
+        self.business_name = business_name
+        self.business_rc = business_rc
+        self.business_description = business_description
+        self.website = website
+        self.business_email = business_email
+        self.business_phone = business_phone
+        self.mailbox = mailbox
+        self.bus_address_line1 = bus_address_line1
+        self.bus_address_line2 = bus_address_line2
+        self.bus_city = bus_city
+        self.bus_state = bus_state
+        self.bus_lga = bus_lga
+        self.bank_name = bank_name
+        self.account_name = account_name
+        self.account_number = account_number
+        self.account_type = account_type
 
+class LocationForm(db.Model):
+    __tablename__ = 'LocationForm'
+    id = db.Column(db.Integer, primary_key=True)
+    longitude1 = db.Column(db.String(60), index=True)
+    latitude1 = db.Column(db.String(60), index=True)
+    business_history = db.Column(db.String(60), index=True)
+    business_accesibility = db.Column(db.String(60), index=True)
+    accept_tos = db.Column(db.String(60), index=True)
 
+    def __init__(self, longitude1, latitude1, business_history, business_accesibility, accept_tos):
+        self.longitude1 = longitude1
+        self.latitude1 = latitude1
+        self.business_history = business_history
+        self.business_accesibility = business_accesibility
+        self.accept_tos = accept_tos
+    
+
+        
 class personalForm(Form):
     first_name = StringField('First name', [validators.Length(min=5, max=50), validators.DataRequired()])
     last_name = StringField('Last name', [validators.Length(min=5, max=50), validators.DataRequired()])
@@ -138,7 +158,7 @@ class businessForm(Form):
 class locationForm(Form):
     longitude1 = StringField('Longitude', [validators.Length(min=5, max=50), validators.DataRequired()])
     latitude1 = StringField('Latitude', [validators.Length(min=5, max=50), validators.DataRequired()])
-    business_history= RadioField('Business History', choices=[('Existing Business&nbsp;&nbsp;' ,'Existing Business ',),
+    business_history = RadioField('Business History', choices=[('Existing Business&nbsp;&nbsp;' ,'Existing Business ',),
                                                      ('New Business','New Business')], 
                                                      validators=[Required()])
     business_accesibility = SelectMultipleField('Business Accesibility', 
